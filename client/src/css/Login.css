@@ -1,0 +1,81 @@
+.login_sh{
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,h2,p{
+  margin: 0;
+}
+
+.Login_box{
+  background-color: white;
+  width: 380px;
+  border-radius: 7px;
+  padding: 30px 5px;
+}
+
+.Login_header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30%
+}
+
+.Login_minibox{
+  text-align: center;
+}
+
+.name_id,.name_pw{
+  font-weight: bold;
+
+}
+
+.input_id, .input_pw, .input_name, .input_age{
+  margin-bottom: 15px;
+}
+.input_id input, .input_pw input,.input_name input, .input_age input{
+  width: 200px;
+  height: 20px;
+  padding: 7px;
+  border: 2px solid gray;
+  border-radius: 15px;
+}
+input:focus{
+  border: 2px solid #ACD4F6;
+  background-color: rgba(172, 212, 246,0.3);
+}
+
+
+.login_button{
+  height: 75px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.login_b{
+  width: 60%;
+  height: 60%;
+  border-radius: 7px;
+  background-color: #ACD4F6;
+  border: none;
+  cursor: pointer;
+}
+.login_b p{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.sign_move{
+  margin-left: 20%;
+  display: flex;
+}
+
+.sign_move p{
+  font-size: 12px;
+  margin-bottom: 5px;
+}

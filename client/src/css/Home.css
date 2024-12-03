@@ -1,0 +1,18 @@
+.Home{
+  background-color: #ACD4F6;
+  margin: 0;
+}
+.Home-header{
+  padding: 0 70px;
+}
+.Home_tittle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.h_login{
+  display: flex;
+  justify-content: right;
+}
