@@ -60,3 +60,18 @@ app.get('/login/:id/:pw', function (req, res) {
         res.send({ "ok": false });
     }
 });
+
+
+// [로그아웃 API]
+app.get('/logout/:id', function (req, res) {
+    const id = req.params.id;
+    const user = userdata.find(user => user.id === id);
+
+    if (user) {
+        // 서버에서 사용자 정보를 제거하거나 처리하는 로직 (예: 세션 상태 변경)
+        console.log(`${user.name}님 로그아웃 완료`);
+        res.send({ "ok": true, message: `${user.name}님 로그아웃 완료` });
+    } else {
+        res.send({ "ok": false, message: "사용자가 존재하지 않습니다." });
+    }
+});
