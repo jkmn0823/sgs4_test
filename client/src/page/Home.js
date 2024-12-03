@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/Home.css";
+import Activity from "./Activity";
 
 function Home() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -43,6 +44,9 @@ function Home() {
             </Link>
           )}
         </div>
+      </div>
+      <div className="main_body">
+        <Activity/>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 .Home{
-  background-color: #ACD4F6;
+
   margin: 0;
 }
 .Home-header{
+  background-color: #ACD4F6;
   padding: 0 70px;
 }
 .Home_tittle{
