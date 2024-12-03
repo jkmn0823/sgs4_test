@@ -1,4 +1,42 @@
-.M_foot{
-  height: 300px;
-  border: 2px solid peru;
+/* Record.css */
+.M_foot {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.M_foot h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+td[colSpan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: #888;
 }
