@@ -46,7 +46,7 @@ function Home() {
         </div>
       </div>
       <div className="main_body">
-        <Activity/>
+        <Activity user={user} />
       </div>
     </div>
   );
