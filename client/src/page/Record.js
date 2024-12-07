@@ -4,12 +4,11 @@ import "../css/Record.css";
 
 function Record() {
   const [activities, setActivities] = useState([]);
-  const [expandedIndex, setExpandedIndex] = useState(null); // 클릭한 항목의 인덱스를 저장
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  // 내용이 길면 자르고 "..."으로 표시하는 함수
   const truncateText = (text, maxLength) => {
     if (text.length > maxLength) {
-      return text.slice(0, maxLength) + "..."; // 최대 길이를 넘으면 잘라서 "..." 추가
+      return text.slice(0, maxLength) + "...";
     }
     return text;
   };
@@ -20,7 +19,7 @@ function Record() {
         const response = await axios.get("http://localhost:8080/get-activities");
 
         if (response.data.ok) {
-          setActivities(response.data.activities); // 활동 기록 상태 업데이트
+          setActivities(response.data.activities);
         } else {
           console.log("활동 기록을 가져오는 데 실패했습니다.");
         }
@@ -32,12 +31,11 @@ function Record() {
     fetchActivities();
   }, []);
 
-  // 클릭한 항목의 인덱스를 토글하는 함수
   const toggleDetails = (index) => {
     if (expandedIndex === index) {
-      setExpandedIndex(null); // 이미 펼쳐져 있으면 닫음
+      setExpandedIndex(null);
     } else {
-      setExpandedIndex(index); // 클릭한 항목을 펼침
+      setExpandedIndex(index);
     }
   };
 
@@ -60,14 +58,13 @@ function Record() {
                 <tr onClick={() => toggleDetails(index)}>
                   <td>{activity.category}</td>
                   <td>{activity.title}</td>
-                  <td>{truncateText(activity.content, 30)}</td> {/* 내용 30자 제한 */}
+                  <td>{truncateText(activity.content, 30)}</td>
                   <td>{activity.date}</td>
                 </tr>
-                {/* 클릭한 항목이 펼쳐졌으면 전체 내용 표시 */}
                 {expandedIndex === index && (
                   <tr>
                     <td colSpan="4" className="expanded-content">
-                      {activity.content} {/* 전체 내용 표시 */}
+                      {activity.content}
                     </td>
                   </tr>
                 )}

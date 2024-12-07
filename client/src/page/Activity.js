@@ -69,7 +69,6 @@ function Activity({ user }) {
       </div>
 
       <div className="Program_b">
-        {/* 로그인했을 때만 Main과 Record 컴포넌트를 표시 */}
         {user ? (
           <>
             <Main />
