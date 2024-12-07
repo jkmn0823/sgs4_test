@@ -1,4 +1,50 @@
-.Program_h{
+.Program_h h1{
+  text-align: center;
+  margin-top: 10px;
+}
+.big_box{
+  height: 300px;
+  margin: 30px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content :space-around;
+}
+.box{
   height: 250px;
-  border: 2px solid black;
+  width: 175px;
+  padding: 15px 20px;
+  border: 1px solid #363636;
+  border-radius: 7px;
+}
+
+.box .tittle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.box .date {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 500;
+  color: #818080;
+  margin-top: 3px;
+}
+
+.image_dis{
+  display: flex;
+  justify-content: center;
+}
+.image{
+  height: 200px;
+  width: 175px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

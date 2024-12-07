@@ -2,3 +2,9 @@
   height: 500px;
   border: 2px solid rgb(29, 75, 202);
 }
+textarea {
+  width: 80%;
+  height: 150px;
+  resize: none;
+  padding: 15px;
+}
