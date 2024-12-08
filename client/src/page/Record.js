@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/Record.css";
 
@@ -6,42 +6,42 @@ function Record() {
   const [activities, setActivities] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const truncateText = (text, maxLength) => {
-    if (text.length > maxLength) {
-      return text.slice(0, maxLength) + "...";
-    }
-    return text;
-  };
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
+    if (!user) { //사용자가 없다면 테이블 초기화해라
+      setActivities([]);
+      return;
+    }
+
     const fetchActivities = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/get-activities");
-
+        const response = await axios.get(`http://localhost:8080/get-activities/${user.id}`);
         if (response.data.ok) {
           setActivities(response.data.activities);
         } else {
-          console.log("활동 기록을 가져오는 데 실패했습니다.");
+          setActivities([]);
         }
       } catch (error) {
-        console.log("활동 기록 가져오기 중 오류 발생:", error);
+        setActivities([]);
       }
     };
 
     fetchActivities();
-  }, []);
+  }, [user]);
 
   const toggleDetails = (index) => {
-    if (expandedIndex === index) {
-      setExpandedIndex(null);
-    } else {
-      setExpandedIndex(index);
-    }
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const truncateText = (text, maxLength) => {
+    return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
   };
 
   return (
     <div className="M_foot">
-      <h1>활동 기록 - 테이블</h1>
+      <h1>활동 기록</h1>
+
       <table>
         <thead>
           <tr>

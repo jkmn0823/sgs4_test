@@ -8,9 +8,7 @@ function Signup() {
   const [pw, setPw] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  const [message, setMessage] = useState("");
 
-  // 페이지 이동을 위한 useNavigate 훅
   const navigate = useNavigate();
 
   const handleSignup = async () => {
@@ -18,28 +16,28 @@ function Signup() {
       try {
         const response = await axios.get(`http://localhost:8080/signup/${id}/${pw}/${name}/${age}`);
         if (response.data.ok) {
-          setMessage("회원가입 성공! 로그인 페이지로 이동합니다.");
-          // 회원가입 성공 후 로그인 페이지로 이동
-          setTimeout(() => {
-            navigate("/login");
-          }, 2000); // 2초 후에 로그인 페이지로 이동
+          alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+          navigate("/login");  // 로그인 페이지로 이동
         } else {
-          setMessage("아이디가 이미 존재합니다.");
+          alert("아이디가 이미 존재합니다.");
         }
       } catch (error) {
-        setMessage("회원가입 중 오류가 발생했습니다.");
+        alert("회원가입 중 오류가 발생했습니다.");
       }
     } else {
-      setMessage("모든 필드를 입력해주세요.");
+      alert("모든 필드를 입력해주세요.");
     }
   };
 
   return (
     <div className="login_sh">
       <div className="Login_box">
-        <div className="Login_header">
-          <h1>회원가입</h1>
+        <div className="hh">
+            <div className="Login_header" onClick={() => navigate("/")}>
+              <h1>대외활동</h1>
+            </div>
         </div>
+        <h2>회원가입</h2>
         <div className="Login_minibox">
           <div className="name_id">
             <p>ID</p>
@@ -71,7 +69,6 @@ function Signup() {
             회원가입
           </button>
         </div>
-        {message && <p>{message}</p>}
       </div>
     </div>
   );

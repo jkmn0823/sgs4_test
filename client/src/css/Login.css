@@ -8,6 +8,7 @@
 
 h1,h2,p{
   margin: 0;
+  text-align: center;
 }
 
 .Login_box{
@@ -17,11 +18,18 @@ h1,h2,p{
   padding: 30px 5px;
 }
 
-.Login_header{
+.hh{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30%
+}
+
+.Login_header{
+  cursor: pointer;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Login_minibox{
