@@ -10,6 +10,7 @@ function Home() {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState('activity');
 
+
   const handleLogout = async () => {
     if (user) {
       try {
@@ -42,13 +43,14 @@ function Home() {
         <div className="Home_tittle">
           <h2>대외활동 기록 서비스</h2>
         </div>
-        <div className="header-buttons">
-          {currentPage !== 'record' && (
-            <p onClick={handleGoToRecord} style={{ cursor: 'pointer' }}>기록보러가기</p>
-          )}
-          {currentPage !== 'activity' && (
-            <p onClick={handleGoToActivity} style={{ cursor: 'pointer' }}>글쓰러가기</p>
-          )}
+        <div className="header_button">
+
+          <button onClick={handleGoToActivity}>
+            작성하기
+          </button>
+          <button onClick={handleGoToRecord}>
+            기록보기
+          </button>
         </div>
         <div className="h_login">
           {user ? (

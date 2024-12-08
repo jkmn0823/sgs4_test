@@ -1,10 +1,70 @@
 .M_body{
   height: 500px;
   border: 2px solid rgb(29, 75, 202);
+  padding: 30px 50px;
+  margin: 15px 6.5%;
+}
+
+.M_body h1{
+  text-align: center;
+
 }
 textarea {
   width: 80%;
   height: 150px;
   resize: none;
   padding: 15px;
+
+}
+
+.formm{
+  height: 90%;
+  text-align: center;
+  border: none;
+}
+.formm input,
+.formm select,
+.formm textarea{
+  border-radius: 10px;
+  padding: 7px 3px;
+  text-align: center;
+  border: 0.5px solid gray;
+  margin-left: 15px;
+}
+.formm input:focus,
+.formm select:focus,
+.formm textarea:focus {
+  border: 2px solid #0064FF;
+  outline: none;
+}
+
+
+.c_t_d{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c_t_d div{
+  margin: 0 30px;
+}
+
+
+
+
+.form_button{
+  margin-top: 100px;
+}
+
+.form_button button{
+  width: 75px;
+  margin: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 100, 255);
 }

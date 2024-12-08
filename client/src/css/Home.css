@@ -15,5 +15,47 @@
 
 .h_login{
   display: flex;
+  align-items: center;
   justify-content: right;
+  height: 50px;
+  margin: 0;
+}
+
+.h_login button{
+  height: 30px;
+  width: 75px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+.h_login button:hover{
+  background-color: #0064FF;
+  transition: background-color 0.3s ease;
+}
+
+.header_button{
+  height: 50px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+.header_button button{
+  width: 100px;
+  margin: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 100, 255, 0.3);
+}
+
+.header_button button:hover{
+  background-color: #0064FF;
+  transition: background-color 0.3s ease;
 }

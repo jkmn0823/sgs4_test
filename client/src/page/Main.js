@@ -36,47 +36,54 @@ function Main() {
   return (
     <div className="M_body">
       <h1>활동 양식 내용</h1>
-      <form onSubmit={handleSubmit}> 
-        <div>
-          <label>카테고리:</label>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            required
-          >
-            <option value="">선택하세요</option>
-            <option value="봉사">봉사</option>
-            <option value="대외활동">대외활동</option>
-            <option value="공모전">공모전</option>
-          </select>
+      <form onSubmit={handleSubmit} className='formm'> 
+        
+        <div className='c_t_d'>
+          <div className='category'>
+            <label>카테고리:</label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              required
+            >
+              <option value="">선택하세요</option>
+              <option value="봉사">봉사</option>
+              <option value="대외활동">대외활동</option>
+              <option value="공모전">공모전</option>
+            </select>
+          </div>
+          <div className='tittle'>
+            <label>제목:</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </div>
+          <div className='date'>
+            <label>날짜:</label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+          </div>
         </div>
-        <div>
-          <label>제목:</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>내용:</label>
+
+        <div className='내용'>
           <textarea
+            placeholder="내용을 입력해주세요"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label>날짜:</label>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-          />
+        <div className='form_button'>
+          <button type="submit">제출</button>
         </div>
-        <button type="submit">제출</button>
+
       </form>
     </div>
   );

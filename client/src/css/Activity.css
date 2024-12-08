@@ -1,3 +1,14 @@
+.Program_b{
+  height: 500px;
+}
+.Program_b p{
+  padding: 150px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 40%;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
 a{
   text-decoration: none;
   color: black;
@@ -52,3 +63,4 @@ a{
   height: 100%;
   object-fit: cover;
 }
+
