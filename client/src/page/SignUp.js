@@ -17,7 +17,7 @@ function Signup() {
         const response = await axios.get(`http://localhost:8080/signup/${id}/${pw}/${name}/${age}`);
         if (response.data.ok) {
           alert("회원가입 성공! 로그인 페이지로 이동합니다.");
-          navigate("/login");  // 로그인 페이지로 이동
+          navigate("/login");
         } else {
           alert("아이디가 이미 존재합니다.");
         }

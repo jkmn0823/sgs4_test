@@ -43,6 +43,8 @@ td[colSpan="6"] {
   padding: 10px;
   text-align: left;
   text-align: center;
+  white-space: pre-line; 
+  word-wrap: break-word;
 }
 
 .search{

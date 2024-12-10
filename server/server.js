@@ -2,16 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-//임시데이터
 let userdata = [
-    { id: 'test', pw: 'test', name: 'test', age: '23' },
-];
-// 임시 데이터에 id 추가
+    { id: 'test', pw: 'test', name: 'test', age: '23' },];
 let activities = [
     { id: '1', userId: 'test', category: "봉사", title: "봉사활동 1", content: "어린이 도서관 봉사", date: "2024-11-01" },
-    { id: '2', userId: 'test', category: "대외활동", title: "외부 행사 참여", content: "대학생 캠프 참가", date: "2024-11-05" },
-];
-
+    { id: '2', userId: 'test', category: "대외활동", title: "외부 행사 참여", content: "대학생 캠프 참가", date: "2024-11-05" },];
 
 app.use(express.json());
 app.use(cors());
@@ -39,7 +34,6 @@ app.get('/signup/:id/:pw/:name/:age', function (req, res) {
         res.send({ "ok": false });
     } else if (id && pw && name && age) {
         userdata.push({ id, pw, name, age });
-
         console.log("회원가입 완료 : ", userdata);
         res.send({ "ok": true });
     } else {
@@ -54,7 +48,6 @@ app.get('/login/:id/:pw', function (req, res) {
 
     if (id && pw) {
         const user = userdata.find(user => user.id === id && user.pw === pw);
-
         if (user) {
             console.log("로그인 성공한 사용자: ", user);
             res.send({
@@ -88,15 +81,14 @@ app.post('/submit-activity', function (req, res) {
 
     if (userId && category && title && content && date) {
         const newActivity = { 
-            id: (activities.length + 1).toString(), 
+            id: (activities.length + 1).toString(), //새로운 활동의 경우 id+1
             userId, 
             category, 
             title, 
             content, 
             date 
         };
-
-        activities.push(newActivity);
+        activities.push(newActivity); //배열에 푸쉬
 
         res.send({ ok: true, activities, message: "활동 기록이 성공적으로 제출되었습니다." });
     } else {
@@ -109,8 +101,7 @@ app.post('/submit-activity', function (req, res) {
 app.get('/get-activities/:userId', function (req, res) {
     const userId = req.params.userId;
 
-    if (userId) {
-        // userId에 해당하는 내용 출력하기
+    if (userId) { //유저아이디 받아서 그에 맞는 활동 기록 조회해준다.(=필터링)
         const userActivities = activities.filter(activity => activity.userId === userId);
 
         if (userActivities.length > 0) {
@@ -125,11 +116,8 @@ app.get('/get-activities/:userId', function (req, res) {
 
 // [활동 기록 삭제 API]
 app.delete('/delete-activity/:id', function (req, res) {
-    const activityId = req.params.id;
-
-    // 활동 삭제
-    const deletedActivity = activities.find(activity => activity.id === activityId);
-
+    const activityId = req.params.id; //id를 받는다.
+    const deletedActivity = activities.find(activity => activity.id === activityId); // activities 배열에서 id가 activityId와 일치하는 활동을 찾는다
     if (deletedActivity) {
         activities = activities.filter(activity => activity.id !== activityId);
         res.send({ ok: true, message: "활동이 삭제되었습니다." });
@@ -140,19 +128,14 @@ app.delete('/delete-activity/:id', function (req, res) {
 
 // [활동 기록 수정 API]
 app.put('/update-activity/:id', function (req, res) {
-    const activityId = req.params.id; // URL에서 받은 id
-    const { title, content } = req.body; // 수정할 제목과 내용
+    const activityId = req.params.id;
+    const { title, content } = req.body;
 
-    // 활동 수정
-    const activity = activities.find(activity => activity.id === activityId);
+    const activity = activities.find(activity => activity.id === activityId); //activities배열에서 id가 activityId와 일치하는 활동을 찾음
     if (activity) {
-        const oldActivity = { ...activity };  // 수정 전 활동 정보 저장
-
-        // 활동 수정
-        activity.title = title || activity.title;  // 제목 수정
-        activity.content = content || activity.content;  // 내용 수정
-
-        // 수정된 활동 정보 출력
+        const oldActivity = { ...activity };
+        activity.title = title || activity.title; //새로운 값(title)이 있다면 = activity.tile / 없다면 기존 유지
+        activity.content = content || activity.content; //아래도 동일
         console.log("기존 내용: ", oldActivity);
         console.log("수정 완료 내용: ", activity);
 

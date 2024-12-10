@@ -36,14 +36,14 @@ function Main() {
         setTitle("");
         setContent("");
         setDate("");
-        setMessage(""); // 메시지 초기화
+        setMessage("");
       } else {
         alert("활동 기록 제출 실패: " + response.data.message);
         setMessage(response.data.message);
       }
     } catch (error) {
-      console.error("서버에 요청하는 중 오류 발생:", error);
-      setMessage("서버 요청 중 오류가 발생했습니다.");
+      console.error("서버 요청 중 오류 발생:", error);
+      setMessage("서버 요청 중 오류 발생");
     }
   };
 
