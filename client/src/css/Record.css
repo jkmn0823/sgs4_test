@@ -27,17 +27,13 @@ th {
   color: white;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 tr:hover {
   background-color: #ddd;
 }
 
-td[colSpan="4"] {
+
+td[colSpan="6"] {
   text-align: center;
-  font-style: italic;
   color: #888;
 }
 
@@ -46,4 +42,72 @@ td[colSpan="4"] {
   background-color: #f9f9f9;
   padding: 10px;
   text-align: left;
+  text-align: center;
+}
+
+.search{
+  border-radius: 10px;
+  padding: 7px 3px;
+  text-align: center;
+  border: 0.5px solid gray;
+}
+.search:focus{
+  border: 2px solid #0064FF;
+  outline: none;
+}
+.editbox{
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 15px 30px;
+  border: 2px solid #0064FF;
+  outline: none;
+}
+
+.e_tittle{
+  margin-bottom: 10px;
+}
+.e_tittle input{
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 15px 30px;
+  border: 0.5px solid gray;
+  outline: none;
+}
+
+.edit_t{
+  border-radius: 10px;
+}
+.edit_t:focus{
+  border: 2px solid #0064FF;
+  outline: none;
+}
+
+.edit_fin{
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 100, 255, 0.3);
+}
+
+
+.edit{
+  padding: 5px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.delte{
+  padding: 5px 15px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }
